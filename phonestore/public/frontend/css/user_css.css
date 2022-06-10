@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'roboto', sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #242368;
+  --black: #13131a;
+  --bg: #e9edf0;
+  --color2: #06c1d4;
+}
+body {
+  background-color: #e9edf0;
+}
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.container{
+  height: 100%;
+  position: relative;
+}
+.flex{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo{
+  height: 100%;
+  padding: 10px 0;
+}
+.header-logo img {
+  height: 100%;
+}
+header nav, header nav ul{
+  height: 100%;
+}
+header nav ul li{
+  list-style: none;
+}
+header nav ul li a {
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #242368;
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+header nav ul li a:hover, .header-user .the_a_dang_nhap:hover {
+  color: var(--color2);
+  border-bottom: 5px solid var(--color2);
+  transition: 0.1s all ease;
+}
+.header-search {
+  border: 1px solid var(--main-color);
+  border-radius: 20px;
+}
+.header-search:hover{
+  border: 0.5px solid var(--color2);
+  transition: 0.1s all ease;
+}
+.header-search input[type=text] {
+  padding: 0 15px;
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  outline: none;
+}
+.header-search button {
+  width: 35px;
+  height: 30px;
+  background-color: #fff;
+  color: var(--main-color);
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.header-search button:hover{
+  color: var(--color2);
+  transition: 0.1s all ease;
+}
+.header-user{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+.header-user .ul1{
+  position: absolute;
+  top: 30px;
+  transform: translate(-40%);
+  list-style: none;
+  background-color: var(--color2);
+  width: 150px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: none;
+  z-index: 2;
+}
+.header-user .the_a_dang_nhap{
+  color: var(--main-color);
+  border-bottom: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+.header-user .the_a_dang_nhap:hover{
+  color: var(--color2);
+  transition: 0.1s all ease;
+}
+.header-user a {
+  display: block;
+  font-size: 15px;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  border-bottom: 1px solid gray;
+}
+.header-user li:last-child a {
+  border-bottom: none;
+}
+.header-user label {
+  display: block;
+  font-size: 20px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+.header-user i{
+  font-size: 25px;
+}
+.header-user label:hover{
+  color: var(--color2);
+  transition: 0.1s all ease;
+}
+.user-check{
+  display: none;
+}
+.user-check:checked ~ .header-user .ul1{
+  display: block;
+}
+.header-cart a {
+  font-size: 25px;
+  color: var(--main-color);
+}
+.header-cart a:hover{
+  color: var(--color2);
+  transition: 0.1s all ease;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: transparent;
+	display: none;
+  z-index: 1;
+}
+.user-check:checked ~ .overlay{
+  display: block;
+}
+
+/* phần dưới */
+
+.list-product {
+  box-sizing: border-box;
+  position: absolute;
+  top: 70px;
+  width: 18%;
+  margin: 0;
+}
+.list-product-menu {
+  background-color: #fff;
+  padding: 5px;
+}
+.list-product-menu li {
+  list-style: none;
+  border-bottom: 1px solid #e9edf0;
+}
+.list-product-menu li:last-child {
+  border-bottom: none;
+}
+.list-product-menu a, .list-product-menu p {
+  display: block;
+  color: var(--main-color);
+  margin: 5px;
+  text-decoration: none;
+  padding: 10px;
+}
+.list-product-menu a:hover, .list-product-menu p:hover {
+  color: var(--color2);
+  transition: 0.1s all ease;
+}
+.check-menu {
+  display: none;
+}
+.menu-item-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+.icon-menu {
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+  transition: transform linear 0.5s;
+}
+.menu-item-2 {
+  padding-left: 20px;
+  font-size: 15px;
+  display: none;
+}
+.menu-item-2 .noi_bat{
+  font-weight: bold;
+  text-decoration: underline;
+}
+.check-menu:checked ~ .menu-item-2 {
+  display: block;
+}
+.check-menu:checked ~ label>.menu-item-1>.icon-menu {
+  transform: rotate(-180deg);
+}
+
+.content {
+  min-height: calc(100vh);
+  position: relative;
+  top: 70px;
+  left: 19.5%;
+  background-color: white;
+  max-width: 80.5%;
+  z-index: 20;
+}
+
+.title{
+  padding: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--main-color);
+  background-color: #fff;
+  margin: 0;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+}
+.grid-item {
+  box-sizing: border-box;
+  background-color: white;
+  padding: 20px 15px;
+  font-size: 30px;
+  border: 0.1px solid #e9edf0;
+  border-collapse: collapse;
+}
+.grid-item:hover{
+  background-color: white;
+}
+.grid-item a{
+  display: block;
+  text-decoration: none;
+  color: var(--main-color);
+}
+.grid-item img {
+  text-align: center;
+  max-width: 170px;
+  height: 200px;
+  transition: 10s all ease;
+}
+.grid-item img:hover{
+  position: relative;
+  top: -10px;  
+}
+.grid-item .product_img{
+  display: flex;
+  justify-content: center;
+  width: 170px;
+  height: 200px;
+  margin: 0 auto;
+}
+.grid-item .discound{
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 15px;
+}
+.grid-item .product_name p {
+  color: var(--main-color);
+  font-size: 20px;
+  margin-top: 30px;
+}
+.grid-item .product_name p:hover{
+  color: var(--color2);  
+}
+.price{
+  font-size: 20px;
+  margin-top: 15px;
+  color: red;
+}
+footer{
+  position: relative;
+  top: 70px;
+  background-color: var(--main-color);
+}
+.phan_trang{
+  margin: 30px 0;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.phan_trang button{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  border: 1px solid var(--main-color);
+  background-color: #fff;
+}
+.phan_trang button.check, .phan_trang button:hover {
+  color: #fff;
+  background-color: var(--color2);
+}
+#trang{
+  min-height: 1200px;
+}
+.bo_loc{
+  margin: 0 20px 30px 20px;
+}
+select{
+  outline: none;
+  margin-right: 30px; 
+  text-align: center; 
+}
+
+/*hiệu ứng quay*/
+.hidden{
+  display: none;
+}
+.icon{
+  font-size: 80px;
+  color: red;
+  position: fixed; 
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -40px;
+  margin-left: -40px;
+}
+.xoay{
+  animation: xoay 1.5s linear infinite;
+  -moz-animation: xoay 1.5s linear infinite;
+  -ms-animation: xoay 1.5s linear infinite;
+  -o-animation: xoay 1.5s linear infinite;
+  -webkit-animation: xoay 1.5s linear infinite;
+}
+@-webkit-keyframes xoay{
+  from{
+    -ms-transform:rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to{
+    -ms-transform:rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
